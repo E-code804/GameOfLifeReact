@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* .main {
+  background-color: #06062d;
+} */
+
+.grid-main {
+  /* Flex container so the grid is centered and buttons are below or above */
+  display: flex;
+  flex-direction: column; 
+  align-items: center; 
+  gap: 1rem; /* space between the grid and buttons */
+  margin: 20px auto; 
+  max-width: 600px; /* optional max width */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr); 
+  grid-auto-rows: 40px;
+  gap: 2px;
+  border: 2px solid black;
+  width: 100%; 
+  max-width: 500px; 
+  margin: 0 auto; 
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+/* Dead cell */
+.gray-bg {
+  background-color: #f0f0f0;
+}
+
+/* Alive cell */
+.alive-bg {
+  background-color: #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+}
+
+/* Hover effect for cells */
+.cell:hover {
+  background-color: #ddd;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.grid-main button {
+  background-color: #4caf50;
+  color: #ffffff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  margin: 0 0.4rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.grid-main button:hover {
+  background-color: #45a049; 
+}
+
+/* You can also group the buttons in a container if you want them side by side nicely */
+.button-group {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem; 
+  justify-content: center;
+}
+
+/* Responsive grid for different screen sizes */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 30px;
+  }
+}
+
+@media (max-width: 400px) {
+  .grid {
+    grid-template-columns: repeat(10, 1fr);
+    grid-auto-rows: 25px;
+  }
+}
