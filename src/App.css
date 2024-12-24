@@ -4,29 +4,45 @@
   box-sizing: border-box;
 }
 
-/* .main {
-  background-color: #06062d;
-} */
+:root {
+  --primary-green: #86da5d;
+  --primary-text-color: #f0f0f0;
+  --dark-grey: #344350;
+  --bg-color: #172231;
+}
+
+.main {
+  background-color: #172231;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
 .grid-main {
   /* Flex container so the grid is centered and buttons are below or above */
   display: flex;
-  flex-direction: column; 
-  align-items: center; 
+  flex-direction: column;
+  align-items: center;
   gap: 1rem; /* space between the grid and buttons */
-  margin: 20px auto; 
+  margin: 0 auto;
   max-width: 600px; /* optional max width */
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(10, 1fr); 
-  grid-auto-rows: 40px;
+  /* grid-template-columns: repeat(var(--gridSize), 1fr);  */
+  /* grid-auto-rows: 40px; */
   gap: 2px;
-  border: 2px solid black;
-  width: 100%; 
-  max-width: 500px; 
-  margin: 0 auto; 
+  width: 100%;
+}
+
+.grid-main h1 {
+  color: var(--primary-text-color);
+  text-align: center;
+  max-width: 500px;
 }
 
 .cell {
@@ -39,12 +55,11 @@
 
 /* Dead cell */
 .gray-bg {
-  background-color: #f0f0f0;
+  background-color: #344350;
 }
-
-/* Alive cell */
+/* Alive cell 4caf50 */
 .alive-bg {
-  background-color: #4caf50;
+  background-color: var(--primary-green);
   box-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
 }
 
@@ -56,8 +71,8 @@
 }
 
 .grid-main button {
-  background-color: #4caf50;
-  color: #ffffff;
+  background-color: var(--primary-green);
+  color: var(--dark-grey);
   border: none;
   padding: 0.6rem 1.5rem;
   margin: 0 0.4rem;
@@ -68,15 +83,20 @@
 }
 
 .grid-main button:hover {
-  background-color: #45a049; 
+  background-color: #45a049;
 }
 
 /* You can also group the buttons in a container if you want them side by side nicely */
 .button-group {
   display: flex;
-  gap: 0.8rem;
-  margin-top: 1rem; 
+  margin-top: 1rem;
   justify-content: center;
+  align-items: center;
+  max-width: 500px;
+}
+
+.button-group h3 {
+  color: #f0f0f0;
 }
 
 /* Responsive grid for different screen sizes */
